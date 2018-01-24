@@ -1,11 +1,12 @@
 #!/bin/bash
 
-ROOT_DIR="$( cd "$(dirname "$0")" ; cd .. ; pwd -P )"
+ROOT_DIR="$( cd "$(dirname "$0")" ; cd ../../ ; pwd -P )"
 echo $ROOT_DIR
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOT_DIR/lib/caffe
 echo $LD_LIBRARY_PATH
 
+cp ./create_link.sh $ROOT_DIR/lib/caffe/create_link.sh
 sudo chmod a+x $ROOT_DIR/lib/caffe/create_link.sh
 bash $ROOT_DIR/lib/caffe/create_link.sh
 
