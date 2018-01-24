@@ -1,0 +1,53 @@
+#for some other files
+resource/
+install/
+include/
+lib/
+
+#for qt
+CMakeLists.txt.user
+
+# for cmake
+CMakeLists.txt
+CMakeCache.txt
+CMakeFiles
+
+# Makefile     this should be commented because we have Makefile in sh folder
+cmake_install.cmake
+install_manifest.txt
+
+# for linux local file
+*~
+
+# for c++
+
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.pyc
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
