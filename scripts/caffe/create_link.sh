@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+DIR="$( cd "$(dirname "$0")" ; cd ../../lib/caffe; pwd -P )"
 echo $DIR
 
 echo "delete the old link"

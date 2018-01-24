@@ -249,6 +249,7 @@ int main(int argc, char** argv) {
 
   cv::Mat img = cv::imread(file, -1);
   CHECK(!img.empty()) << "Unable to decode image " << file;
+
   std::vector<Prediction> predictions = classifier.Classify(img);
 
   /* Print the top N predictions. */
@@ -257,6 +258,13 @@ int main(int argc, char** argv) {
     std::cout << std::fixed << std::setprecision(4) << p.second << " - \""
               << p.first << "\"" << std::endl;
   }
+
+  std::string window_name = "Display Image";
+  cv::namedWindow(window_name, cv::WINDOW_AUTOSIZE);
+  cv::imshow(window_name, img);
+  cv::waitKey(0);
+  cv::destroyWindow(window_name);
+
 }
 #else
 int main(int argc, char** argv) {
