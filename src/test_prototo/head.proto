@@ -1,0 +1,11 @@
+//should specify the version of proto, syntax = "proto2"; or syntax = "proto3"; 
+// in proto3, "required" was removed
+ 
+syntax = "proto2"; 
+
+message head
+{
+  required int32 type = 1;
+  required bool st = 2;
+  repeated float points = 3;
+}

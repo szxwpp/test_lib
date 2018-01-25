@@ -1,0 +1,11 @@
+# test gflags
+if(WIN32)
+	set(gflags gflags_static shlwapi)
+	# set(gflags gflags_nothreads_static shlwapi)
+endif(WIN32)
+if(UNIX)
+	set(gflags gflags)
+	# set(gflags gflags_nothreads)
+endif(UNIX)
+add_executable(test_gflags test_gflags.cpp)
+target_link_libraries(test_gflags ${gflags})

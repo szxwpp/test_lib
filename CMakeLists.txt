@@ -53,10 +53,21 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 
-################ dependences include and lib ################# 
-include(cmake/dependences.cmake)
-
+################ thirdparty include and link ################# 
+include_directories(${PROJECT_SOURCE_DIR}/include)
+link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 
 ################ add subdirectory ################# 
-add_subdirectory(src/test_caffe)
+if(WIN32)
+	add_subdirectory(src/test_boost)
+	#add_subdirectory(src/test_protobuf)
+	add_subdirectory(src/test_dlib)
+	add_subdirectory(src/test_g3log)
+	add_subdirectory(src/test_gflag)
+	#add_subdirectory(src/test_gtest)
+endif(WIN32)
+
+if(UNIX)
+    add_subdirectory(src/caffe)
+endif(UNIX)

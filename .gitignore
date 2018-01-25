@@ -3,12 +3,14 @@ resource/
 install/
 include/
 lib/
+bin/
+*.pb.cc
+*.pb.h
 
 #for qt
 CMakeLists.txt.user
 
 # for cmake
-CMakeLists.txt
 CMakeCache.txt
 CMakeFiles
 
